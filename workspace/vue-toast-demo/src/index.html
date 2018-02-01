@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./../node_modules/vue/dist/vue.js"></script>
+    <script src="./../dist/vue-toast.js"></script>
+    <script>
+        Vue.use(window.VueToast.default);
+    </script>
+    <style>
+        html,body,p,div{
+            margin: 0;
+            padding: 0;
+        }
+        .toast-container{
+            position: absolute;
+            left: 0;
+            top:0;
+            bottom: 0;
+            right:0;
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .toast{
+            width: 180px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            background-color: black;
+            color: white;
+            border-radius: 13px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <a href="javascript:;" @click="toast">toast</a>
+</div>
+<script>
+new Vue({
+    el:'#app',
+    methods:{
+        toast: function () {
+            this.$toast.show("请求失败!")
+        }
+    }
+})
+</script>
+</body>
+</html>
